@@ -14,12 +14,15 @@ export class MenusComponent implements OnInit {
   mostrarComida = false;
   public title: string;
   public text: string;
+
   public menu: Menu;
   public status: boolean;
+  
   public priceCA: number;
   public priceCL: number;
   public priceS: number;
   public priceJugo: number;
+  public priceHS: number;
   public priceHD: number;
   public priceAG: number;
   public priceQH: number;
@@ -53,9 +56,11 @@ export class MenusComponent implements OnInit {
         else{
           this.status = false;
         }
+        form.reset();
       },
       error => {
         console.log(<any>error);
+        form.reset();
       }
     );
   }
